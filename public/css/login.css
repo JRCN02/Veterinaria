@@ -1,0 +1,18 @@
+.login{
+    background: rgba(0, 0, 0, 0.247);
+    border-radius: 25px;
+    padding: 5%;
+    text-align: center;
+}
+
+.container-fluid {
+    background-image: url("../img/fondoL.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input:focus{
+    
+}

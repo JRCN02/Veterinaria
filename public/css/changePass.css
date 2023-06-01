@@ -1,0 +1,6 @@
+.toggle-password{
+    position: relative;
+    float: right;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

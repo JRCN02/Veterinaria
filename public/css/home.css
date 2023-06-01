@@ -1,0 +1,12 @@
+.menuInicio {
+    background-image: url("../img/homeO.jpg");
+    height: 380px;
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.footer{
+    height: auto;
+    padding: 2rem;
+}
