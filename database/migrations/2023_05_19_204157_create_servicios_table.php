@@ -17,6 +17,12 @@ return new class extends Migration
             $table->string('descripcion',200);
             $table->decimal('costo');
             $table->string('imagen')->nullable();
+            //Añadiendo llaves forareas relacionada con la tabla de especialidad
+           // $table->unsignedBigInteger('id_ambiente');
+            //$table->foreign('id_ambiente')->references('id')->on('ambientes');
+
+            $table->unsignedBigInteger('id_especialidad');
+            //$table->foreign('id_especialidad')->references('id')->on('especialidads');
         });
     }
 

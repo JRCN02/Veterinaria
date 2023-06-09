@@ -6,12 +6,12 @@
 @endsection
 @section('content')
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" >
           <div class="col d-flex justify-content-center align-items-center " style="height: 100vh;">
             <form class="login" action="login" method="post">
               @csrf
               <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                <p class="lead fw-normal mb-0 me-3">Iniciar Secion </p>
+                <p class="lead fw-normal mb-0 me-3 " style="color: white;">Iniciar Secion </p>
               </div>
               <!-- Email input -->
               <div class="form-outline mb-4 mt-3">
@@ -31,10 +31,15 @@
                 <button class="btn btn-danger mt-3">Cancelar</button>
   
               </a-->
+              <br>
+               <i class="bg-warning p-2">
+                Si inicia Secion por primera vez,su clave es su Fecha de 
+                 nacimiento EJ: 02/02/2000
+              </i>
+                
             </form>
           </div>
-        
-      </div>
+        </div>
     </div>
 
 @endsection

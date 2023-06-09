@@ -13,7 +13,12 @@ class LoginController extends Controller
         if(Auth::attempt($credenci)){
             //Para evitar clonaciones de secion con csrf
             request()->session()->regenerate();
-            return redirect('dash');
+            $user = Auth::user();
+            if($user->estado == 1){
+                return redirect('dash');
+            }else{
+                Auth::logout();
+            }
         }
         return redirect('login');
     }
@@ -46,5 +51,38 @@ class LoginController extends Controller
         }else{
             echo "contraseña actual invalida";
         }
+    }
+
+    public function perfilForm(){
+        $user = Auth::user();
+        $perfilForm="";
+        return view('dash',compact('perfilForm','user'));
+    }
+
+    public function update(Request $request){
+        $id = Auth::id();
+        $user = User::find($id);
+
+        $user->celular = $request->input('celular');
+        $user->direccion = $request->input('direccion');
+
+        if($request->hasFile('perfil')){
+            $file = $request->file('perfil');
+            $desti = 'img/perfil/'; //Direccion en  mi carpeta public
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $subir = $request->file('perfil')->move($desti,$filename);
+            $user->perfil = $desti.$filename;
+        }else{
+            //Imagen default
+            $user->perfil = "img/perfil/perfildefault.png";
+        }
+
+        if($user->user != $request->input('user')){
+            $user->user = $request->input('user');
+            $user->save();
+            Auth::logout();
+        }
+        $user->save();
+        return redirect('dash');
     }
 }

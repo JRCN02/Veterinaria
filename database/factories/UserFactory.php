@@ -19,7 +19,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => fake()->name(),
+            /*'nombre' => fake()->name(),
             'apellido' => fake()->name(),
             'user' => fake()->name(),
             'password' => Hash::make('admin'),
@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             
             'remember_token' => Str::random(10),
-           
+           */
         ];
     }
 

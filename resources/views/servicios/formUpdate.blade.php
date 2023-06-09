@@ -2,7 +2,7 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-10 col-lg-10 col-xl-8 offset-xl-1">
             <div class="form-group">
-                <form action="update" method="post">
+                <form action="update" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{$id}}">
                     <div class="form-outline mb-4">

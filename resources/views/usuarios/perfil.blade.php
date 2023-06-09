@@ -27,24 +27,21 @@
                 {{ $user->celular }}    
             </p>    
             
-            
-            <button type="" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
-            Modificar
-            </button>
+            <a href="perfil/form">
+                <button type="" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                    Modificar
+                </button>
+            </a>
+
             <a href=" {{ url()->previous() }} ">
-            <button class="btn btn-danger btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="button">
-            Cancelar
-            </button>
+                <button class="btn btn-danger btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="button">
+                    Cancelar
+                </button>
             </a>        
         </div>
         <div class="col-md-5 col-lg-5 col-xl-4 offset-xl-1">
             <label class="" for="form3Example3">Perfil</label>
-            <img src="{{ asset('img/fondoL.jpg') }}" alt="Perfil" class="perfil">
-
-            <label class="form-label" for="form3Example3">Cargo</label>
-            <p>
-                {{ $user->cargo }}
-            </p>
+            <img src="{{ asset($user->perfil) }}" alt="Perfil" class="perfil">
 
             <label class="form-label" for="form3Example3">Fecha de Nacimiento</label>
             <p>

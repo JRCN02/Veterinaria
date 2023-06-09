@@ -4,21 +4,20 @@
 
 @section('content_header')
     <h1>
-        @if (!@isset($perfil))
+        @if (@isset($perfil))
             Veterinaria
-        @endif
-        @if (@isset($servi))
-            - Servicios
-        @endif
-        @if(@isset($formAdd))
+        @elseif (@isset($servi))
+            Especialidad - Servicios
+        @elseif(@isset($formAdd))
             - Servicios - Agregar
-        @endif
-        @if(@isset($update))
+        @elseif(@isset($update))
             - Servicios - Modificar
-        @endif
-
-        @if(@isset($horarioView))
+        @elseif(@isset($horarioView))
             - Horario
+        @elseif(@isset($especi))
+            Especialidades
+        @else
+                        
         @endif
 
         
@@ -27,28 +26,31 @@
 
 @section('content')
     @if (@isset($servi))
-        @include('servicios.view');
-    @endif
-    @if (@isset($formAdd))
-        @include('servicios.formAdd');
-    @endif
-    @if(@isset($update))
-        @include('servicios.formUpdate');
-    @endif
-    @if(@isset($horarioView))
-        @include('horarios.view');
-    @endif
-    @if(@isset($perfil))
+        @include('servicios.view')
+    @elseif (@isset($formAdd))
+        @include('servicios.formAdd')
+    @elseif(@isset($update))
+        @include('servicios.formUpdate')
+    @elseif(@isset($horarioView))
+        @include('horarios.view')
+    @elseif(@isset($perfil))
         @include('usuarios.perfil')
-    @endif
-    @if(@isset($perfiles))
-        @include('perfiles.view');
-    @endif
-    @if(@isset($changePas))
-        @include('usuarios.formPass');
-    @endif
-    @if(@isset($formUser))
-        @include('perfiles.form');
+    @elseif(@isset($perfilForm))
+        @include('usuarios.form')
+    @elseif(@isset($perfiles))
+        @include('perfiles.view')
+    @elseif(@isset($changePas))
+        @include('usuarios.formPass')
+    @elseif(@isset($formUser))
+        @include('perfiles.form')
+    @elseif(@isset($especi))
+        @include('especialidades.view')
+    @elseif(@isset($formE))
+        @include('especialidades.form')
+    @elseif(@isset($especiU))
+        @include('especialidades.formUpdate')
+    @else
+        @include('inicio')
     @endif
 @stop
 

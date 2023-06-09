@@ -60,7 +60,7 @@
           
         <div class="col-md-4">
           <div class="card md-4 shadow-sm">
-            <img src="{{asset('img/home.jpg')}}" alt="service" class="card-img-top">
+            <img src="{{asset( $item->imagen )}}" alt="service" class="card-img-top">
           </div>
           
           <div class="card-body">

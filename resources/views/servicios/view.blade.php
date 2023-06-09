@@ -1,16 +1,17 @@
 <div class="container mt-3" >
     <div class="row justify-content-end">
-        <a class="ml-2" href="servicios/formAdd">
+        <a class="ml-2" href="servicios/formAdd?idE={{$idEspeci}}">
             <button class="btn btn-success">Agregar</button>
         </a>
 
     </div>
     <div class="row">
+    
     @foreach ($servi as $item)
         
         <div class="col-md-4">
-            <div class="card md-4 shadow-sm">
-                <img src="{{asset('img/home.jpg')}}" alt="service" class="card-img-top">
+            <div class="card md-4 shadow-sm" style="min-height: 200px">
+                <img src="{{asset( $item->imagen )}}" alt="service" class="card-img-top" style="max-width: 60%; min-height: 100%">
             </div>
         
             <div class="card-body">

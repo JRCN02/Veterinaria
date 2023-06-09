@@ -312,21 +312,27 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Servicios',
-            'url'         => 'admin/servicios',
-            'icon'        => 'fas fa-clinic-medical',
-            'label'       => 1,
-            'label_color' => 'success',
+            'text'        => 'Inicio',
+            'url'         => 'dash',
+            'icon'        => 'fas fa-home'
+        ],
+        
+        [
+            'text'        => 'Especialidades',
+            'url'         => 'admin/especialidad',
+            'icon'        => 'fa fa-plus'
         ],
         [
             'text'        => 'Horarios',
             'url'         => 'admin/horarios',
             'icon'        => 'far fa-clock',
+            'can'         => 'admin.horarios'
         ],
         [
             'text'  =>  'Administrar perfiles',
             'url'   =>  'admin/perfiles',
-            'icon'  =>  'fas fa-fw fa-users'
+            'icon'  =>  'fas fa-fw fa-users',
+            'can'   =>  'admin.perfiles'
         ],
         ['header' => 'Configuracion de mi cuenta'],
         [
@@ -338,6 +344,7 @@ return [
             'text' => 'Cambiar Contraseña',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+            'can'  => 'cambiarPass'
         ],
         [
             'text' => 'Cerrar Secion',

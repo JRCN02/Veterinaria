@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nombre',90);
             $table->string('apellido',120);
             $table->integer('ci');
+            $table->string('perfil')->nullable();
+            $table->string('especialidad')->nullable();
             $table->string('user');
             $table->string('password');
             $table->string('direccion',255);
@@ -23,8 +25,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('estado');
             $table->timestamp('email_verified_at')->nullable();
-            
-            $table->string('cargo',20);
             $table->date('fNacimiento');
             
             $table->rememberToken();

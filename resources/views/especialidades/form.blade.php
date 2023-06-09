@@ -6,20 +6,12 @@
                     @csrf
                 
                     <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">Nombre del servicio</label>
+                    <label class="form-label" for="form3Example3">Nombre de la Especialidad</label>
                     <input name="nombre" type="text" class="form-control form-control-lg" placeholder="Nombre" />
                     
-                    <label class="form-label" for="form3Example3">Descripcion</label>
-                    <input name="descripcion" type="text" class="form-control form-control-lg" placeholder="Descripcion" />
-                    
-                    <label class="form-label" for="form3Example3">Costo</label>
-                    <input name="costo" type="number" class="form-control form-control-lg" placeholder="Costo" />
-                    
-                    <label class="form-label" for="form3Example3">Imagen</label>
-                    <input name="imagen" type="file" id="form3Example3" class="form-control form-control-lg" />
-                    
-                    <input type="hidden" name="idE" value="{{$_GET['idE']}}">
-                </div>
+                <br>
+                <br>
+                <br>
                 <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
                     Agregar
                 </button>

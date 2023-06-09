@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EspecialidadController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HorarioController;
@@ -37,6 +38,8 @@ Route::controller(ServicioController::class)->group(function(){
 Route::get('admin/horarios',[HorarioController::class,'view']);
 Route::controller(LoginController::class)->group(function(){
   Route::get('admin/perfil','perfil');
+  Route::get('admin/perfil/form','perfilForm');
+  Route::post('admin/perfil/update','update');
   Route::get('admin/settings','form');
   Route::post('admin/settings/update','password');
 });
@@ -45,6 +48,19 @@ Route::controller(PerfilController::class)->group(function(){
   Route::get('admin/perfiles','perfiles');
   Route::get('admin/addUser','form');
   Route::post('admin/insert','add');
+  Route::get('admin/lock','lock');
+  Route::get('admin/delete','delete');
+});
+
+Route::controller(EspecialidadController::class)->group(function(){
+  Route::get('admin/especialidad','view');
+  Route::get('admin/especialidad/form','form');
+  Route::get('admin/especialidad/formUp','formUp');
+  Route::post('admin/especialidad/add','add');
+  Route::get('admin/especialidad/delete','delete');
+  
+  Route::post('admin/especialidad/update','update');
+  
 });
 
 
